@@ -13,7 +13,7 @@ export default class Board {
       const cell = document.createElement("div");
       cell.className = "cell";
       cell.dataset.index = i;
-      this.field.appendChild(cell);
+      this.field.append(cell);
       this.cells.push(cell);
     }
   }
@@ -37,7 +37,7 @@ export default class Board {
     if (!cell) return;
 
     const goblinClone = goblinElement.cloneNode(true);
-    cell.appendChild(goblinClone);
+    cell.append(goblinClone);
     cell.classList.add("has-goblin");
   }
 
@@ -63,7 +63,7 @@ export default class Board {
         <button id="restartBtn">Играть снова</button>
       </div>
     `;
-    this.field.appendChild(overlay);
+    this.field.append(overlay);
 
     const restartBtn = overlay.querySelector("#restartBtn");
     restartBtn.addEventListener("click", () => {
